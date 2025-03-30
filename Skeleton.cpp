@@ -3,11 +3,8 @@
 
 Skeleton::Skeleton() //Constructor to initialize 
 {
-	if (!skeletonTexture.loadFromFile("graphics/skeleton.png"))
-	{
-		std::cerr << "Failed to load skeleton.png";
-	}
-	
+	skeletonTexture.loadFromFile("graphics/skeleton.png");
+
 	skeletonSprite = std::make_unique<sf::Sprite>(skeletonTexture);
 	constexpr sf::Vector2f startLocation{ 300.f,300.f };
 	skeletonSprite->setPosition({ startLocation});//Set starting position
