@@ -21,9 +21,21 @@
     <ClCompile Include="Skeleton.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="PrimaryInteract.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseEnemy.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Skeleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimaryInteract.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
