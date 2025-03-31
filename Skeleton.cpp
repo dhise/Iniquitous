@@ -1,5 +1,12 @@
 #include "Skeleton.h"
+#include "GameTic.h"
+#include "baseEnemy.h"
 #include <iostream>
+#include <SFML/System/Clock.hpp>
+#include <SFML/Graphics.hpp>
+
+
+
 
 Skeleton::Skeleton() //Constructor to initialize 
 {
@@ -8,7 +15,7 @@ Skeleton::Skeleton() //Constructor to initialize
 	skeletonSprite = std::make_unique<sf::Sprite>(skeletonTexture);
 	constexpr sf::Vector2f startLocation{ 300.f,300.f };
 	skeletonSprite->setPosition({ startLocation});//Set starting position
-
+	
 
 }
 
@@ -23,3 +30,6 @@ void Skeleton::moveSkele(sf::Vector2i& mouseLocation)
 {
 	skeletonSprite->setPosition({ sf::Vector2f(mouseLocation) });
 }
+
+
+

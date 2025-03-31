@@ -3,18 +3,19 @@
 #include "Skeleton.h"
 #include "PrimaryInteract.h"
 #include "BaseEnemy.h"
+#include "GameTic.h"
 
 
-
+//Something is crashing the game out it is something to do with the skeleton attacking formula maybe scrap it completely and do even simpler one
 
 
 
 
 int main()
 {
+
     sf::Font font("fonts/textfont.otf");
     sf::Text text(font);
-    sf::Text stats(font);
     text.setCharacterSize(24);//in pixels
     text.setFillColor(sf::Color::Black);
     sf::Texture cursorTexture;
@@ -28,8 +29,8 @@ int main()
     //Make window
     sf::RenderWindow window(sf::VideoMode({ windowX, windowY }), "Iniquitous");
 
-
-
+    int baseHealth{ 10 };
+ 
 
 
     BaseEnemy baseEnemy;
@@ -39,6 +40,7 @@ int main()
     while (window.isOpen())
     {
         window.setMouseCursorVisible(false);
+
 
         //Get mouse window coordinates
         sf::Vector2i mouseLocation{ sf::Mouse::getPosition(window) };
@@ -51,8 +53,6 @@ int main()
         {
             skeleton.moveSkele(mouseLocation);
         }
-
-        text.setString("HP: " + std::to_string(baseEnemy.health));
 
         
         while (const std::optional event = window.pollEvent())
