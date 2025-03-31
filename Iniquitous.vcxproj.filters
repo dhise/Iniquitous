@@ -30,7 +30,7 @@
     <ClCompile Include="GameTic.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="EntityMonsters.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClInclude Include="GameTic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="EntityMonsters">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
