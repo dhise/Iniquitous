@@ -47,7 +47,7 @@
     <ClInclude Include="GameTic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EntityMonsters">
+    <ClInclude Include="EntityMonsters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

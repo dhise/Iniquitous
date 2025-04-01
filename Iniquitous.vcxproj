@@ -151,8 +151,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseEnemy.h" />
+    <ClInclude Include="EntityMonsters.h" />
     <ClInclude Include="GameTic.h" />
-    <ClInclude Include="EntityMonsters" />
     <ClInclude Include="PrimaryInteract.h" />
     <ClInclude Include="Skeleton.h" />
   </ItemGroup>
