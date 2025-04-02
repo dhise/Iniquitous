@@ -17,8 +17,10 @@ TestDummy::TestDummy(int hp, sf::Font& font) : text(font)
 	testDummySprite = std::make_unique<sf::Sprite>(testDummyTexture);
 	testDummySprite->setPosition({ 960.f, 540.f });
 	text.setString(std::to_string(hp));
-	sf::Vector2f textLocation({ testDummySprite->getPosition().x, testDummySprite->getPosition().y});
+	sf::Vector2f textLocation({ testDummySprite->getPosition().x, testDummySprite->getPosition().y});//Gets the location of the sprite and adds to y to place text above it
 	text.setPosition(textLocation);
+	
+
 }
 
 void TestDummy::draw(sf::RenderWindow& window)
@@ -28,3 +30,10 @@ void TestDummy::draw(sf::RenderWindow& window)
 	
 }
 
+
+
+/* TO DO make a general spawner from monster class that can be used on any entity
+void Monster::drawEntity(sf::RenderWindow& window)
+{
+	window.draw()
+}*/

@@ -6,15 +6,14 @@
 
 
 //when moving to living entity.h/cpp move appropriate parameters to private
-
+/*
 class Skeleton {
 public:
 	Skeleton();//Constructor
 	void draw(sf::RenderWindow& window);
 	void moveSkele(sf::Vector2i& mouselocation);
-	int skeleDmg{ 1 };
 	GameTic entityTic;
-	//void skeleAttack(int damage, int speed);
+
 	
 	
 
@@ -26,4 +25,5 @@ private:
 	sf::Clock clock;
 };
 
+*/
 

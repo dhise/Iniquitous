@@ -33,6 +33,12 @@
     <ClCompile Include="EntityMonsters.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="EntityGeneral.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Testing.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Skeleton.h">
@@ -50,5 +56,14 @@
     <ClInclude Include="EntityMonsters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EntityGeneral.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Testing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="gameinfo.txt" />
   </ItemGroup>
 </Project>

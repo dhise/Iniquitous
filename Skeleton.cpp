@@ -8,7 +8,7 @@
 
 
 
-Skeleton::Skeleton() //Constructor to initialize 
+/*Skeleton::Skeleton() //Constructor to initialize 
 {
 	skeletonTexture.loadFromFile("graphics/skeleton.png");
 
@@ -30,6 +30,10 @@ void Skeleton::moveSkele(sf::Vector2i& mouseLocation)
 {
 	skeletonSprite->setPosition({ sf::Vector2f(mouseLocation) });
 }
+
+
+
+*/
 
 
 

@@ -9,8 +9,9 @@ class Monster {
 public:
 	int monsterHealth{};
 	Monster(int hp);
+	//Monster(sf::Sprite sprite);//universal spawner for entities will come back later
 	Monster() : monsterHealth(20) {}//Default constructor
-	
+	//void drawEntity(sf::RenderWindow& window);//to draw the entity's sprite
 	
 
 };
@@ -20,29 +21,19 @@ public:
 	
 	sf::Text text;
 	TestDummy(int hp, sf::Font& font);
-	
-	
-	sf::Vector2f textLocation{};
-
-
 	void draw(sf::RenderWindow& window);
 	void drawText(int hp, sf::RenderWindow& window);
 	sf::Texture testDummyTexture;
 	std::unique_ptr<sf::Sprite> testDummySprite;
-	
+private:
+	sf::Vector2f textLocation{};
+
 };
 
+
+
+
 /*class  Skeleton : public
-
-
-
-
-
-
-
-
-
-
 
 class Skeleton {
 public:
@@ -60,7 +51,8 @@ private:
 	sf::Texture skeletonTexture;
 	#std::unique_ptr<sf::Sprite> skeletonSprite;
 	#sf::Clock clock;
-};*\
+};
+*\
 
 
 /*
@@ -87,4 +79,4 @@ public:
 };
 
 // Define the static variable outside the class
-int Monster::baseHealth = 100;  // Default base health for all monsters*/
+int Monster::baseHealth = 100;  // Default base health for all monsters */

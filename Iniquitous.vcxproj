@@ -142,19 +142,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EntityGeneral.cpp" />
     <ClCompile Include="GameTic.cpp" />
     <ClCompile Include="EntityMonsters.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PrimaryInteract.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="BaseEnemy.cpp" />
+    <ClCompile Include="Testing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseEnemy.h" />
+    <ClInclude Include="EntityGeneral.h" />
     <ClInclude Include="EntityMonsters.h" />
     <ClInclude Include="GameTic.h" />
     <ClInclude Include="PrimaryInteract.h" />
     <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="Testing.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="gameinfo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
