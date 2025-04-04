@@ -1,56 +1,32 @@
-#include <vector>
-#include <memory>
+_________________________________________________
 
-class Game {
+class Skeleton {
 public:
-    std::vector<std::unique_ptr<Skeleton>> skeletons;
+	// Constructor takes a texture reference and initializes the sprite
+	Skeleton(sf::Texture& texture);
 
-    void spawnSkeleton() {
-        skeletons.push_back(std::make_unique<Skeleton>());
-    }
-};
-
-Game game;
-game.spawnSkeleton();  // Spawns 1 skeleton
-game.spawnSkeleton();  // Spawns another
-
-_________________________________________________________________________________________________
-_________________________________________________________________________________________________
-_________________________________________________________________________________________________
-
-
-/*/class Skeleton : public Monster
-{
-public:
-	Skeleton();//Constructor
-	void skeleDraw(sf::RenderWindow& window);
+	// Method to get the sprite
+	sf::Sprite& getSprite();
 
 private:
-	sf::Texture skeleTexture;
-	std::unique_ptr<sf::Sprite> skeleSprite;
+	sf::Sprite sprite;  // Sprite for the skeleton
 };
-*/
-
-------------------------------------------------------------------------------------------------
 
 
-Skeleton::Skeleton()
+
+class EntitySpawner
 {
-	skeleTexture.loadFromFile("graphics/skeleton.png");
-	skeleSprite = std::make_unique<sf::Sprite>(skeleTexture);
-	skeleSprite->setPosition({ 300.f,300.f });
+public:
+	EntitySpawner();  // Constructor declaration
+	void spawnSkeletons();  // Method declaration
+	void drawSkeletons(sf::RenderWindow& window);  // Method to draw skeletons
 
+private:
+	sf::Texture skeletonTexture;  // Texture for the skeleton
+	std::vector<std::unique_ptr<Skeleton>> skeletons;  // Vector of unique pointers to Skeleton
+};
 
-}
-
-
-void Skeleton::skeleDraw(sf::RenderWindow& window)
-{
-	window.draw(*skeleSprite);
-}
-
-
-
-_________________________________________________________________________________________________
-_________________________________________________________________________________________________
-_________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________

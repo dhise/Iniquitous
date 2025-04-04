@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+
+
 class BaseEnemy{
 public:
 	BaseEnemy();//Constructor

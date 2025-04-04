@@ -7,9 +7,10 @@
 #include "EntityMonsters.h"
 #include "EntityGeneral.h"
 #include "Testing.h"
+#include "GameVariables.h"
 
 //Be super proud for figuring out how to create the text to appear next to the monster. to do next make it so a skeleton spawns out of a entity (texture of a grave yard or something idk) maybe even move a little?
-
+/* KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID*/
 
 
 
@@ -35,10 +36,9 @@ int main()
 
  
 
-    Testing testing;
+    
    
-    BaseEnemy baseEnemy;
-    //Skeleton skeleton;
+
     PrimaryInteract primaryInteract;
     TestDummy testDummy(20, font);
     EntitySpawner entitySpawner;
@@ -56,18 +56,13 @@ int main()
         //Put cursor graphic where mouse is pointing
         cursorSprite.setPosition({ static_cast<float>(mouseLocation.x), static_cast<float>(mouseLocation.y) });
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-		{
-            entitySpawner.spawnSkeletons();
-		}
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
         {
             entitySpawner.spawnSkeletons();
-            testing.testFunc();
         }
 
-
+        std::cout << entityMonsterSmallRectSize.x << " " << entityMonsterSmallRectSize.y << std::endl;
         
         while (const std::optional event = window.pollEvent())
         {

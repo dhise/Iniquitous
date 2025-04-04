@@ -145,6 +145,7 @@
     <ClCompile Include="EntityGeneral.cpp" />
     <ClCompile Include="GameTic.cpp" />
     <ClCompile Include="EntityMonsters.cpp" />
+    <ClCompile Include="GameVariables.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PrimaryInteract.cpp" />
     <ClCompile Include="Skeleton.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="EntityGeneral.h" />
     <ClInclude Include="EntityMonsters.h" />
     <ClInclude Include="GameTic.h" />
+    <ClInclude Include="GameVariables.h" />
     <ClInclude Include="PrimaryInteract.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="Testing.h" />
