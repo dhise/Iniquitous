@@ -29,8 +29,9 @@ TestSlime::TestSlime() {
     slimeRectShape.setSize({ slimeSprite->getLocalBounds().size.x, slimeSprite->getLocalBounds().size.y });
     slimeRectShape.setOutlineThickness(0.f);
     slimeRectShape.setOutlineColor(sf::Color::Black);
-
-
+    slimeRectShape.setOutlineThickness(1.0f);
+    slimeRect.size = slimeSprite->getGlobalBounds().size;
+    slimeRect.position = slimeSprite->getPosition();
 
 }
 

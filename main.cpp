@@ -21,9 +21,7 @@ int main()
  
     sf::Font font("fonts/textfont.otf");
     
-    //sf::Texture cursorTexture("graphics/NewCursorBig.png");
-    //sf::Sprite cursorSprite(cursorTexture);
-   
+
 
     //Make values for window to use as variables
     unsigned int windowX{ 1920 };
@@ -39,7 +37,7 @@ int main()
     TestSlime testSlime;
     Cursor cursor;
     
-
+    std::optional<sf::FloatRect> intersection;
 
 
 
@@ -49,17 +47,27 @@ int main()
         
         //({ static_cast<float>(mouseLocation.x), static_cast<float>(mouseLocation.y) });
 
-        //Get mouse window coordinates
-        sf::Vector2i mouseLocation = sf::Mouse::getPosition(window);
-
+        //Pass window coordinates to mouse texture
+        sf::Vector2f mouseLocation = sf::Vector2f(sf::Mouse::getPosition(window));
         cursor.moveCursor(mouseLocation);
+        
+        intersection = cursor.iMouseRect.findIntersection(testSlime.slimeRect);
+
+
+        
+        if (intersection)
+        {
+            std::cout << "yay" << std::endl;
+        }
+
+        
 
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
         {
-        
             
-            
+            std::cout << "Test slime size x " << testSlime.slimeSprite->getGlobalBounds().size.x << " " << "Test slime size y" << testSlime.slimeSprite->getGlobalBounds().size.y << std::endl;
+            std::cout << "Cursor size x " << cursor.cursorSprite->getGlobalBounds().size.x << " " << "Cursor size y " << cursor.cursorSprite->getGlobalBounds().size.y << std::endl;
         }
         /*                                             going to try a TestSlime function that returns the TestSlime.getLocalBounds.position and compare it against current mouse location if so then set outlinethickness
         if (cursorSprite.getGlobalBounds().findIntersection(testSlime.getPosition().position))

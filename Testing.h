@@ -29,10 +29,11 @@ public:
     sf::FloatRect slimeRect;
     sf::Vector2f size;
     sf::RectangleShape slimeRectShape;
+    std::unique_ptr<sf::Sprite> slimeSprite;
 private:
     int slimeHealth{ 100 };
     sf::Texture slimeTexture;
-    std::unique_ptr<sf::Sprite> slimeSprite;
+    
 
 
 
