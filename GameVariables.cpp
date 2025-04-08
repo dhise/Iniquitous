@@ -12,5 +12,8 @@ sf::Vector2f entityMonsterSmallRectSize = sf::Vector2f(32.0f, 32.0f);
 
 
 //Small entity monster rects
-sf::RectangleShape entityMonsterSmallRect(entityMonsterSmallRectSize);
+sf::IntRect entityMonsterSmallRect;//Need to finish defining 
+
+
+
 

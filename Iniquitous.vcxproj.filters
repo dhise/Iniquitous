@@ -42,6 +42,9 @@
     <ClCompile Include="GameVariables.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Skeleton.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameVariables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

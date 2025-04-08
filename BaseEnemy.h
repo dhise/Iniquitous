@@ -13,7 +13,8 @@ public:
 
 private:
 	int health;
-	
+	sf::Texture texture;
+	std::unique_ptr<sf::Sprite> testSlimeSprite;
 
 };
 

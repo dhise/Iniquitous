@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="EntityGeneral.cpp" />
     <ClCompile Include="GameTic.cpp" />
     <ClCompile Include="EntityMonsters.cpp" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseEnemy.h" />
+    <ClInclude Include="Cursor.h" />
     <ClInclude Include="EntityGeneral.h" />
     <ClInclude Include="EntityMonsters.h" />
     <ClInclude Include="GameTic.h" />

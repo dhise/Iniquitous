@@ -8,9 +8,9 @@
 #include "EntityGeneral.h"
 #include "Testing.h"
 #include "GameVariables.h"
+#include "Cursor.h"
 
-//Be super proud for figuring out how to create the text to appear next to the monster. to do next make it so a skeleton spawns out of a entity (texture of a grave yard or something idk) maybe even move a little?
-/* KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID*/
+/* KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID*/ 
 
 
 
@@ -20,12 +20,9 @@ int main()
  
     sf::Font font("fonts/textfont.otf");
     
-    sf::Texture cursorTexture("graphics/NewCursorBig.png");
-    sf::Sprite cursorSprite(cursorTexture);
-
-
-
-
+    //sf::Texture cursorTexture("graphics/NewCursorBig.png");
+    //sf::Sprite cursorSprite(cursorTexture);
+   
 
     //Make values for window to use as variables
     unsigned int windowX{ 1920 };
@@ -34,35 +31,42 @@ int main()
     //Make window
     sf::RenderWindow window(sf::VideoMode({ windowX, windowY }), "Iniquitous");
 
- 
-
-    
-   
 
     PrimaryInteract primaryInteract;
     TestDummy testDummy(20, font);
     EntitySpawner entitySpawner;
+    TestSlime testSlime;
+    Cursor cursor;
+    
+
+
+
 
     while (window.isOpen())
     {
         window.setMouseCursorVisible(false);
         
-
+        //({ static_cast<float>(mouseLocation.x), static_cast<float>(mouseLocation.y) });
 
         //Get mouse window coordinates
-        sf::Vector2i mouseLocation{ sf::Mouse::getPosition(window) };
+        sf::Vector2i mouseLocation = sf::Mouse::getPosition(window);
 
-
-        //Put cursor graphic where mouse is pointing
-        cursorSprite.setPosition({ static_cast<float>(mouseLocation.x), static_cast<float>(mouseLocation.y) });
+        cursor.moveCursor(mouseLocation);
 
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
         {
-            entitySpawner.spawnSkeletons();
+        
+            
+            
         }
-
-        std::cout << entityMonsterSmallRectSize.x << " " << entityMonsterSmallRectSize.y << std::endl;
+        /*                                             going to try a TestSlime function that returns the TestSlime.getLocalBounds.position and compare it against current mouse location if so then set outlinethickness
+        if (cursorSprite.getGlobalBounds().findIntersection(testSlime.getPosition().position))
+        {
+            testSlime.outline();
+        }
+        */
+  
         
         while (const std::optional event = window.pollEvent())
         {
@@ -72,9 +76,11 @@ int main()
 
 
         window.clear(sf::Color::White);
-        window.draw(cursorSprite);
+        
         entitySpawner.drawSkeletons(window);
         testDummy.draw(window);
+        testSlime.draw(window);
+        cursor.draw(window);
         window.display();
     }
 

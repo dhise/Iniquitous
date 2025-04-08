@@ -1,3 +1,90 @@
+﻿Caveman cheat sheet for smart pointers
+You got it, Jared 😄  
+Here’s your **"Smart Pointer Caveman Cheat Sheet"** — like I’m explaining it to a caveman who just learned chairs exist. 🪑🪨
+
+---
+
+### 🧠 Caveman Brain Level: What is a Pointer?
+
+👴 Caveman say:
+
+> “Me want keep Sprite in cave. Me point at Sprite with stick.”
+
+In code:
+```cpp
+sf::Sprite* sprite; // 🪨 Stick point at Sprite
+```
+
+But caveman must remember to **clean up** Sprite or big fire (memory leak)! 🔥
+
+---
+
+### 🧠 What is `std::unique_ptr`?
+
+👴 Caveman discover **smart stick**:
+
+> “Smart stick hold Sprite. Smart stick clean up Sprite when Sprite not needed.”
+
+In code:
+```cpp
+std::unique_ptr<sf::Sprite> sprite;
+```
+
+This means:
+✅ It owns the sprite.  
+✅ It deletes it **automatically** when done.  
+❌ You can’t copy it (it’s unique).
+
+---
+
+### 🧪 How Caveman Use It:
+
+#### 🪄 Make new Sprite:
+```cpp
+sprite = std::make_unique<sf::Sprite>();
+```
+
+#### 🧷 Use like regular pointer:
+```cpp
+sprite->setPosition(50, 100);
+window.draw(*sprite);  // Use * to give the actual Sprite to SFML
+```
+
+---
+
+### 📦 Caveman Rules:
+
+| Caveman Want To...         | Code Example                                   |
+|----------------------------|------------------------------------------------|
+| Make smart Sprite stick    | `std::unique_ptr<sf::Sprite> s;`              |
+| Create new Sprite inside   | `s = std::make_unique<sf::Sprite>();`         |
+| Use Sprite functions       | `s->move(10, 0);`                              |
+| Draw to window             | `window.draw(*s);`                             |
+| Smart stick clean up?      | YES. When it leaves scope, Sprite is deleted. |
+
+---
+
+### ❗ Extra Caveman Tips
+
+- Don’t write `*` in the declaration — smart stick already know it hold thing.
+- Don’t copy smart stick — only **one** caveman own it at a time.
+- Use `->` to talk to the Sprite.
+- Use `*sprite` only when **something else wants the real thing**, like `window.draw(*sprite)`.
+
+---
+
+Let me know if Caveman Jared want to move Sprite, eat Sprite, or make many Sprites walk across cave. 🪨
+
+
+
+
+
+
+
+
+
+
+
 _________________________________________________
 
 class Skeleton {

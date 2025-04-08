@@ -11,4 +11,4 @@ extern int entityMonsterHealth;
 extern sf::Vector2f entityMonsterSmallRectSize;
 
 //Sprite rect variables
-extern sf::RectangleShape entityMonsterSmallRect;
+extern sf::IntRect entityMonsterSmallRect;
