@@ -9,7 +9,7 @@
 #include "Testing.h"
 #include "GameVariables.h"
 
-//Be super proud for figuring out how to create the text to appear next to the monster. to do next make it so a skeleton spawns out of a entity (texture of a grave yard or something idk) maybe even move a little?
+
 /* KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID KEEP IT SIMPLE STUPID*/
 
 
