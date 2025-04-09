@@ -16,13 +16,13 @@ public:
 	void draw(sf::RenderWindow& window);
 	void moveCursor(sf::Vector2f mouselocation);
 	std::unique_ptr<sf::Sprite> cursorSprite;
+	sf::FloatRect getPosition();
 private:
 	sf::Texture cursorTexture;
 	
 	
 
 };
-
 
 
 

@@ -54,3 +54,29 @@ void TestSlime::outline()
 {
     slimeRectShape.setOutlineThickness(1.0f);
 }
+
+
+
+
+//Background testing
+Background::Background() {
+
+    texture.loadFromFile("graphics/simplebackground.png");
+    sprite = std::make_unique<sf::Sprite>(texture);
+
+}
+
+void  Background::draw(sf::RenderWindow& window)
+{
+    window.draw(*sprite);
+}
+
+
+Movement::Movement() {
+    
+}
+
+void moveRight(sf::Vector2f currentXPosition) {
+
+    int rand();
+};

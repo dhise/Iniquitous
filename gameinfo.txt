@@ -1,4 +1,14 @@
-﻿Caveman cheat sheet for smart pointers
+﻿
+(cursor.getPosition().findIntersection(testSlime.getPosition())) easy collision
+
+
+
+
+
+
+
+
+Caveman cheat sheet for smart pointers
 You got it, Jared 😄  
 Here’s your **"Smart Pointer Caveman Cheat Sheet"** — like I’m explaining it to a caveman who just learned chairs exist. 🪑🪨
 
@@ -117,3 +127,74 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+ // Update the delta time
+            Time dt = clock.restart();
+
+			    // Update the total game time
+            gameTimeTotal += dt;
+
+			
+            // Make a fraction of 1 from the delta time
+            float dtAsSeconds = dt.asSeconds();
+
+
+			// Update the player
+            player.update(dtAsSeconds, Mouse::getPosition());
+
+			 // We will call this function once every frame
+    void update(float elapsedTime, Vector2i mousePosition);
+			const float START_SPEED = 200;
+
+			void Player::update(float elapsedTime, Vector2i mousePosition)
+			 // Calculate the angle the player is facing
+			  if (m_UpPressed)
+    {
+        m_Position.y -= m_Speed * elapsedTime;
+    }
+    if (m_DownPressed)
+    {
+        m_Position.y += m_Speed * elapsedTime;
+    }
+    if (m_RightPressed)
+    {
+        m_Position.x += m_Speed * elapsedTime;
+    }
+    if (m_LeftPressed)
+    {
+        m_Position.x -= m_Speed * elapsedTime;
+    }
+    m_Sprite.setPosition(m_Position);
+    // Keep the player in the arena
+    if (m_Position.x > m_Arena.width - m_TileSize)
+    {
+        m_Position.x = m_Arena.width - m_TileSize;
+    }
+    if (m_Position.x < m_Arena.left + m_TileSize)
+    {
+        m_Position.x = m_Arena.left + m_TileSize;
+    }
+    if (m_Position.y > m_Arena.height - m_TileSize)
+    {
+        m_Position.y = m_Arena.height - m_TileSize;
+    }
+    if (m_Position.y < m_Arena.top + m_TileSize)
+    {
+        m_Position.y = m_Arena.top + m_TileSize;
+    }
+
+
+    float angle = (atan2(mousePosition.y - m_Resolution.y / 2,
+        mousePosition.x - m_Resolution.x / 2)
+        * 180) / 3.141;
+
+
+    m_Sprite.setRotation(angle);
+
+
+

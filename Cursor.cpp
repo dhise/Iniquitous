@@ -12,8 +12,10 @@ Cursor::Cursor() {
 
 
 
-
-
+sf::FloatRect Cursor::getPosition()
+{
+	return cursorSprite->getGlobalBounds();
+}
 
 
 
@@ -37,3 +39,8 @@ void Cursor::printCursorSize()
 {
 	std::cout << iMouseRect.size.x << " " << iMouseRect.size.y;
 }
+
+
+
+
+

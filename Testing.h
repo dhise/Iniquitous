@@ -30,6 +30,7 @@ public:
     sf::Vector2f size;
     sf::RectangleShape slimeRectShape;
     std::unique_ptr<sf::Sprite> slimeSprite;
+    sf::Vector2f m_position;
 private:
     int slimeHealth{ 100 };
     sf::Texture slimeTexture;
@@ -47,5 +48,29 @@ private:
     //Rect
    
 
+
+};
+
+
+
+//Background testing
+class Background {
+public:
+    Background();
+    void draw(sf::RenderWindow& window);
+    std::unique_ptr<sf::Sprite> sprite;
+
+private:
+    sf::Texture texture;
+
+};
+
+
+
+
+class Movement{
+public:
+    Movement();
+    void moveRight(sf::Vector2f currentXPosition);
 
 };
