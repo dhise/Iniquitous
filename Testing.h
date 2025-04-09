@@ -28,25 +28,18 @@ public:
     void outline();
     sf::FloatRect slimeRect;
     sf::Vector2f size;
-    sf::RectangleShape slimeRectShape;
     std::unique_ptr<sf::Sprite> slimeSprite;
-    sf::Vector2f m_position;
+    sf::Vector2f position;
+    void moveRight();
+
 private:
     int slimeHealth{ 100 };
     sf::Texture slimeTexture;
-    
-
-
-
-   
-    
     //temporary start location
     sf::Vector2f spawnLocation{ 400.f,400.f };
     //Location of slime
     sf::Vector2f mPosition = spawnLocation;
 
-    //Rect
-   
 
 
 };

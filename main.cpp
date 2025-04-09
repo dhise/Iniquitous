@@ -56,7 +56,7 @@ int main()
     float deltaTime = 0.f;
     float dt{0.f};
 
-
+    testSlime.slimeSprite->setPosition(testSlime.position);
 
     while (window.isOpen())
     {
@@ -68,30 +68,27 @@ int main()
         
         sf::Vector2f mouseLocation = sf::Vector2f(sf::Mouse::getPosition(window));//Pass window coordinates to mouse texture
         cursor.moveCursor(mouseLocation);//Function to match location of the cursor sprite with where it should be
-        intersection = cursor.iMouseRect.findIntersection(testSlime.slimeRect);//gives the intersection a value when ever the mouse rect is on the slime rect. we don't care how much just that it has a value meaning they are colliding
+        
+
         /*
-        //if intersection has any value then there is collision which will make intersection true while colliding
-        if (intersection)
-        {
-            std::cout << "yay" << std::endl;
-        }
-        */
-   
         if (dt >= 1.f)
         {
             std::cout << "Yay";
             dt = 0.f;
         }
-       
+        */
+        
+        
   
 
         //this is just insane
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
         {
             
-            
-            
 
+            std::cout << testSlime.getPosition().position.x << " " << testSlime.getPosition().position.y << std::endl;
+            std::cout << testSlime.position.x << " " << testSlime.position.y << std::endl;
+            testSlime.moveRight();
 
 
             /*

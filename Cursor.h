@@ -10,7 +10,7 @@ class Cursor {
 public:
 	Cursor();
 	
-	sf::FloatRect iMouseRect;
+
 	sf::Sprite returnSprite();
 	void printCursorSize();
 	void draw(sf::RenderWindow& window);
