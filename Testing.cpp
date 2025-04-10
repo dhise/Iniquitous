@@ -33,12 +33,14 @@ TestSlime::TestSlime() {
     slimeSprite->setPosition({spawnLocation.x, spawnLocation.y});
     
     sf::Vector2f size = slimeSprite->getLocalBounds().size;
-    slimeSprite->setOrigin(sf::Vector2f(size.x / 2.f, size.y / 2.f));
+
+    sf::Vector2f spriteOrigin((size.x / 2.f), (size.y / 2));
+    slimeSprite->setOrigin(spriteOrigin);
     position = slimeSprite->getPosition();
 
 }
 
-//Member functions of test slime
+//TestSlime functions
 void TestSlime::draw(sf::RenderWindow& window)
 {
     window.draw(*slimeSprite);
@@ -82,10 +84,14 @@ void  Background::draw(sf::RenderWindow& window)
 //Entity actions
 
 //Searching for target
-Searching::Searching() {
-    sightRange = { 25.f};
-    sightRect.setSize({ sightRange, sightRange });
+Searching::Searching() {//Creating a rectangle shape search box any entity that findintersects returns will be in target range. visible only for testing/debugging
+    searchRectShape.setSize({ 400.f, 400.f });//Once set up this will be a variable that different monsters will have different search ranges
 
+    searchRectShape.setOutlineThickness(2.f);
+    searchRectShape.setOutlineColor(sf::Color::Black);
+    searchRectShape.setTexture(nullptr);
+    testRect.size = sf::Vector2f(400.f, 400.f);//Rect for findintersection
+    //sf::Color::Transparent use this 
 
 }
 
@@ -94,7 +100,13 @@ void Searching::draw(sf::RenderWindow& window)
 
 }
 
-
+void Searching::setEntitySearchRange(sf::Sprite& sprite)//Currently this is placing the search box to the right and down of sprite instead of centering  
+{
+    sf::Vector2f spriteLocation{ sprite.getPosition() };
+    searchRectShape.setPosition(spriteLocation);
+    searchRectShape.setOrigin(sprite.getOrigin());//Will need to figure out the math for this
+    testRect.position = spriteLocation;//placing rect with sprite
+}
 
 
 

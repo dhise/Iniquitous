@@ -67,10 +67,11 @@ public:
 
     Searching();
     void draw(sf::RenderWindow& window);
-
+    void setEntitySearchRange(sf::Sprite& sprite);
+    sf::RectangleShape searchRectShape;
+    sf::FloatRect testRect;
 private:
-    float sightRange{};
-    sf::RectangleShape sightRect;
+    
 
 
 };

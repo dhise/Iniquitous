@@ -16,3 +16,7 @@ void BaseEnemy::draw(sf::RenderWindow& window)
 	window.draw(*testDummySprite);//Draw testdummy sprite
 }
 
+sf::FloatRect BaseEnemy::getPosition()
+{
+	return testDummySprite->getGlobalBounds();
+}
