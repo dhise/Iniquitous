@@ -51,10 +51,9 @@ int main()
     ************
     */
     sf::Clock clock;
-
-    float timeSinceLast = 0.f;
-    float deltaTime = 0.f;
-    float dt{0.f};
+    sf::Clock tickClock;
+    int gameTicks{ 0 };
+    const float TICKRATE{1.0f / 30.0f};// 30 ticks per second(.0333 seconds per tick)
 
     testSlime.slimeSprite->setPosition(testSlime.position);
 
@@ -62,21 +61,32 @@ int main()
     {
         //Hide cursor
         window.setMouseCursorVisible(false);
-        deltaTime = clock.restart().asSeconds();
-        dt += deltaTime;
+
+        sf::Time elapsed = tickClock.getElapsedTime();//Get time passed
+        sf::Time dt = clock.restart();
+        float dtAsSeconds = dt.asSeconds();
+
+
+        std::cout << elapsed.asSeconds();
+        if (elapsed.asSeconds() >= TICKRATE)
+        {
+            gameTicks++;//increment ticks every 1/30 of a second. so 30 times a second
+                clock.restart();
+        }
+
+
         
         
         sf::Vector2f mouseLocation = sf::Vector2f(sf::Mouse::getPosition(window));//Pass window coordinates to mouse texture
         cursor.moveCursor(mouseLocation);//Function to match location of the cursor sprite with where it should be
         
 
-        /*
-        if (dt >= 1.f)
+
+
+        if (cursor.getPosition().findIntersection(testSlime.getPosition()))
         {
-            std::cout << "Yay";
-            dt = 0.f;
+            testSlime.update(dtAsSeconds);
         }
-        */
         
         
   
@@ -84,21 +94,12 @@ int main()
         //this is just insane
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R))
         {
-            
+            testSlime.update(dtAsSeconds);
 
-            std::cout << testSlime.getPosition().position.x << " " << testSlime.getPosition().position.y << std::endl;
-            std::cout << testSlime.position.x << " " << testSlime.position.y << std::endl;
-            testSlime.moveRight();
-
-
-            /*
-            std::cout << "Test slime size x " << testSlime.slimeSprite->getGlobalBounds().size.x << " " << "Test slime size y" << testSlime.slimeSprite->getGlobalBounds().size.y << std::endl;
-            std::cout << "Cursor size x " << cursor.cursorSprite->getGlobalBounds().size.x << " " << "Cursor size y " << cursor.cursorSprite->getGlobalBounds().size.y << std::endl;
-            */
         }
- 
-  
-        
+
+
+
         while (const std::optional event = window.pollEvent())
         {
             

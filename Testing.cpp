@@ -18,6 +18,16 @@ void Testing::testFunc() {
 //Constructor for test slime
 TestSlime::TestSlime() {
 
+    /*
+    state idle 
+    state searching - maybe make a rect shape for this? it expands until it sees a target then changes to chase state
+    state chasing
+    state attacking
+    state dead
+    
+    
+    */
+
     slimeTexture.loadFromFile("graphics/testSlime.png");
     slimeSprite = std::make_unique<sf::Sprite>(slimeTexture);
     slimeSprite->setPosition({spawnLocation.x, spawnLocation.y});
@@ -42,12 +52,14 @@ sf::FloatRect TestSlime::getPosition()
     return slimeSprite->getGlobalBounds();
 }
 
-void TestSlime::moveRight()
-{
-    position.x += 1;
-    slimeSprite->setPosition(position);
-}
 
+
+void TestSlime::update(float elapsedTime)
+{
+    position.x += (speed * elapsedTime);
+    slimeSprite->setPosition(position);
+    
+};
 
 
 
@@ -65,7 +77,35 @@ void  Background::draw(sf::RenderWindow& window)
 }
 
 
+
+
+//Entity actions
+
+//Searching for target
+Searching::Searching() {
+    sightRange = { 25.f};
+    sightRect.setSize({ sightRange, sightRange });
+
+
+}
+
+void Searching::draw(sf::RenderWindow& window)
+{
+
+}
+
+
+
+
+
+
+
 Movement::Movement() {
+
+
+
+
+
     
 }
 

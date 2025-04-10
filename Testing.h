@@ -15,7 +15,7 @@ private:
 };
 
 
-
+//m_Position.y -= m_Speed * elapsedTime;
 
 
 class TestSlime {
@@ -25,12 +25,13 @@ public:
     void printTest(sf::FloatRect bounds);
     //Get position of hitbox
     sf::FloatRect getPosition();
-    void outline();
+
+    void update(float elapsedTime);
     sf::FloatRect slimeRect;
     sf::Vector2f size;
     std::unique_ptr<sf::Sprite> slimeSprite;
     sf::Vector2f position;
-    void moveRight();
+    float speed = 300;
 
 private:
     int slimeHealth{ 100 };
@@ -59,7 +60,20 @@ private:
 };
 
 
+//Entity actions
 
+class Searching {
+public:
+
+    Searching();
+    void draw(sf::RenderWindow& window);
+
+private:
+    float sightRange{};
+    sf::RectangleShape sightRect;
+
+
+};
 
 class Movement{
 public:
@@ -67,3 +81,5 @@ public:
     void moveRight(sf::Vector2f currentXPosition);
 
 };
+
+//Time moved currenly to gameinfo.txt for now
